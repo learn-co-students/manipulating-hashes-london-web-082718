@@ -1,5 +1,7 @@
+
+
 def first_challenge
-  contacts = {
+  contacts = { 
     "Jon Snow" => {
       name: "Jon",
       email: "jon_snow@thewall.we", 
@@ -12,11 +14,34 @@ def first_challenge
       favorite_icecream_flavors: ["strawberry", "cookie dough", "mint chip"]
     }
   }
+  contacts["Freddy Mercury"].collect do |attribute, value|
+    if attribute == :favorite_icecream_flavors
+      value.delete("strawberry")
+    end 
+  end
+  contacts
+end 
 
-  #your code here
 
 
-  #remember to return your newly altered contacts hash!
+=begin
+  contacts["Freddie Mercury"][:favorite_icecream_flavors].delete_if{|flav| flav =="strawberry"}
   contacts
 end
+=end 
 
+
+
+ # include? "strawberry"
+    
+
+  # contacts["Freddie Mercury"].each do |attribute, value|
+   # attribute.delete_if { |ice_cream, flavour| :favorite_icecream_flavors == "strawberry"}
+ # end 
+   # if attribute == :favorite_icecream_flavors
+      
+    
+    
+    
+   # data.each do |attribute, value|
+  #contacts["Freddie Mercury"][:favorite_icecream_flavors].delete_if {|key, value| value == "strawberry"}
